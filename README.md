@@ -59,7 +59,7 @@ flowchart TD
 Requiere Python 3.10 o superior y no utiliza dependencias externas.
 
 ```bash
-python src/fv_tax_engine.py data/cfdi_demo.csv output/resultados_semaforo.csv
+python fv_tax_engine.py cfdi_demo.csv resultados_semaforo.csv
 ```
 
 El resultado se genera en `output/resultados_semaforo.csv`.
