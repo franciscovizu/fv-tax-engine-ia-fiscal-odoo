@@ -21,7 +21,8 @@ from fv_tax_engine import evaluate
 MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT", "")
 LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION", "global")
-SAMPLE_PATH = Path(__file__).with_name("cfdi_demo.csv")
+APP_DIR = Path(__file__).resolve().parent
+SAMPLE_CANDIDATES = [APP_DIR / "cfdi_demo.csv", APP_DIR.parent / "cfdi_demo.csv"]
 
 
 def gemini_client() -> genai.Client:
@@ -61,9 +62,10 @@ def parse_upload(uploaded_file) -> list[dict[str, str]]:
 
 
 def load_sample() -> list[dict[str, str]]:
-    if not SAMPLE_PATH.exists():
-        raise FileNotFoundError("The bundled cfdi_demo.csv sample is missing")
-    return parse_text(SAMPLE_PATH.read_text(encoding="utf-8-sig"))
+    for sample_path in SAMPLE_CANDIDATES:
+        if sample_path.exists():
+            return parse_text(sample_path.read_text(encoding="utf-8-sig"))
+    raise FileNotFoundError("The bundled cfdi_demo.csv sample is missing")
 
 
 st.set_page_config(page_title="FV Fiscal Copilot", page_icon="🧾", layout="wide")
