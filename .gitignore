@@ -3,3 +3,17 @@ __pycache__/
 .env
 output/*.csv
 !output/.gitkeep
+
+# Credenciales y certificados: nunca versionar
+*.key
+*.cer
+*.pem
+*.pfx
+*.p12
+credentials/
+secrets/
+
+# Descargas SAT reales: mantener fuera del repositorio público
+sat_private/
+private_downloads/
+*.zip
