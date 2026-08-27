@@ -44,5 +44,5 @@ def run(source: Path, target: Path) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        raise SystemExit("Uso: python src/fv_tax_engine.py entrada.csv salida.csv")
+        raise SystemExit("Uso: python fv_tax_engine.py entrada.csv salida.csv")
     run(Path(sys.argv[1]), Path(sys.argv[2]))

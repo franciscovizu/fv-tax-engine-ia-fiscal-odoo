@@ -1,0 +1,5 @@
+﻿tipo,metodo_pago,forma_pago,fecha,proveedor,uuid,tiene_complemento,semaforo,resultado
+I,PUE,03,2026-06-03,PROVEEDOR DEMO A,00000000-0000-4000-8000-000000000001,NO,VERDE,Validación básica sin incidencias
+I,PUE,99,2026-06-05,PROVEEDOR DEMO B,00000000-0000-4000-8000-000000000002,NO,ROJO,PUE no debe utilizar forma de pago 99
+I,PPD,99,2026-06-10,PROVEEDOR DEMO C,00000000-0000-4000-8000-000000000003,NO,AMARILLO,PPD pendiente de complemento de pago
+I,PPD,99,2026-06-12,PROVEEDOR DEMO D,00000000-0000-4000-8000-000000000004,SI,VERDE,Validación básica sin incidencias
