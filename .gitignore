@@ -3,6 +3,8 @@ __pycache__/
 .env
 output/*.csv
 !output/.gitkeep
+test_output.csv
+*_output.csv
 
 # Credenciales y certificados: nunca versionar
 *.key
