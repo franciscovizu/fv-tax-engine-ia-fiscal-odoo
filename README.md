@@ -9,6 +9,16 @@ Prototipo de validación fiscal y operativa para CFDI mexicanos, diseñado para 
 
 La revisión manual de CFDI consume tiempo y permite inconsistencias entre el comprobante, el método de pago, la forma de pago, los complementos y el registro contable. FV® Tax Engine aplica reglas repetibles para señalar excepciones antes de la carga o conciliación en Odoo.
 
+## Origen y principios
+
+Este prototipo nace de experiencia directa en operación administrativa, contable y fiscal, especialmente en procesos donde la trazabilidad entre CFDI, inventario, documentación de importación y registro en ERP no siempre puede resolverse con conectores estándar.
+
+El proyecto asume tres principios para su evolución:
+
+- **Humildad:** la herramienta acompaña el criterio profesional; no pretende sustituirlo.
+- **Empatía:** las salidas deben ser claras y útiles para usuarios financieros y operativos.
+- **Honestidad:** cada validación debe dejar visible su alcance, sus supuestos y la necesidad de revisión humana.
+
 ## Qué demuestra este repositorio
 
 - Lectura de una muestra anonimizada de CFDI previamente estructurados.
@@ -62,7 +72,7 @@ Requiere Python 3.10 o superior y no utiliza dependencias externas.
 python fv_tax_engine.py cfdi_demo.csv resultados_semaforo.csv
 ```
 
-El resultado se genera en `output/resultados_semaforo.csv`.
+El resultado se genera exactamente en la ruta de salida que se indique, por ejemplo `resultados_semaforo.csv`.
 
 ## Reglas incluidas
 
